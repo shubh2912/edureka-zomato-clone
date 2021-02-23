@@ -183,14 +183,15 @@ class Header extends React.Component {
                     <div>
                         <div class="login-heading">Sign Up</div>
                         <div style={{ marginBottom: '2px' }}>
-                            <GoogleLogin
+                            {/*<GoogleLogin
                                 clientId="745717577080-5uo0jrq7g23qqioe155h28u94a0co1cj.apps.googleusercontent.com"
                                 buttonText="Continue with Gmail"
                                 onSuccess={this.responseGoogle}
                                 onFailure={this.responseGoogle}
                                 className="google"
                                 cookiePolicy={'single_host_origin'}
-                            /></div>
+                             />*/}
+                        </div>
                         <FacebookLogin
                             appId="1938560389620287"
                             textButton="Continue with Facebook"
