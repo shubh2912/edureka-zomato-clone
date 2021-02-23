@@ -5,7 +5,7 @@ import '../Styles/header.css';
 import { withRouter } from 'react-router-dom';
 
 import FacebookLogin from 'react-facebook-login';
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
 
 const customStyles = {
     content: {
@@ -111,9 +111,9 @@ class Header extends React.Component {
         this.props.history.push('/');
     }
 
-    responseGoogle = (response) => {
+    /* responseGoogle = (response) => {
         console.log(response.profileObj.name);
-    }
+    } */
 
     responseFacebook = (response) => {
         console.log(response.name);
@@ -151,14 +151,15 @@ class Header extends React.Component {
                     <div>
                         <div class="login-heading">Login</div>
                         <div style={{ marginBottom: '2px' }}>
-                            <GoogleLogin
+                            {/* <GoogleLogin
                                 clientId="745717577080-5uo0jrq7g23qqioe155h28u94a0co1cj.apps.googleusercontent.com"
                                 buttonText="Continue with Gmail"
                                 onSuccess={this.responseGoogle}
                                 onFailure={this.responseGoogle}
                                 className="btn google"
                                 cookiePolicy={'single_host_origin'}
-                            /></div>
+                            />*/}
+                        </div>
                         <FacebookLogin
                             appId="1938560389620287"
                             textButton="Continue with Facebook"
