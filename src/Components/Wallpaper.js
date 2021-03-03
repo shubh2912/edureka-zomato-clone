@@ -2,6 +2,7 @@ import React from 'react';
 import '../Styles/home.css';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import URLpath from '../Constants';
 
 class Wallpaper extends React.Component {
     constructor(props) {
@@ -60,7 +61,7 @@ class Wallpaper extends React.Component {
 
         axios({
             method: 'GET',
-            url: `https://mighty-earth-45777.herokuapp.com/api/getRestaurantsbycity/${area}`,
+            url: `${URLpath.API_URL}api/getRestaurantsbycity/${area}`,
             headers: { 'Content-Type': 'application/json' }
         }).then(res => this.setState({ restaurants: res.data.restaurantList }))
             .catch(err => console.log(err))

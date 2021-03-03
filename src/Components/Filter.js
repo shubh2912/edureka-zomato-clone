@@ -2,6 +2,7 @@ import React from 'react';             // Importing React to create a component
 import '../Styles/search.css';         // Importing css file for external styles
 import axios from 'axios';             // Importing axios to make API Calls within the component
 import queryString from 'query-string';// Importing query-string package to parse the values from URL's query string 
+import URLpath from '../Constants';
 
 class Filter extends React.Component {
     constructor() {
@@ -43,7 +44,7 @@ class Filter extends React.Component {
         // Making Filter API Call 
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/restaurantfilter',
+            url: `${URLpath.API_URL}api/restaurantfilter`,
             headers: { 'Content-Type': 'application/json' },
             data: filterObj
         })
@@ -58,7 +59,7 @@ class Filter extends React.Component {
         // Making location API Call to bind the values in location dropdown
         axios({
             method: 'GET',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/cityList',
+            url: `${URLpath.API_URL}api/cityList`,
             headers: { 'Content-Type': 'application/json' }
         }).then(res => this.setState({ locationList: res.data.city }))
             .catch(err => console.log(err))
@@ -93,7 +94,7 @@ class Filter extends React.Component {
 
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/restaurantfilter',
+            url: `${URLpath.API_URL}api/restaurantfilter`,
             headers: { 'Content-Type': 'application/json' },
             data: filterObj
         })
@@ -124,7 +125,7 @@ class Filter extends React.Component {
 
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/restaurantfilter',
+            url: `${URLpath.API_URL}api/restaurantfilter`,
             headers: { 'Content-Type': 'application/json' },
             data: filterObj
         })
@@ -163,7 +164,7 @@ class Filter extends React.Component {
 
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/restaurantfilter',
+            url: `${URLpath.API_URL}api/restaurantfilter`,
             headers: { 'Content-Type': 'application/json' },
             data: filterObj
         })
@@ -193,7 +194,7 @@ class Filter extends React.Component {
 
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/restaurantfilter',
+            url: `${URLpath.API_URL}api/restaurantfilter`,
             headers: { 'Content-Type': 'application/json' },
             data: filterObj
         })
@@ -223,7 +224,7 @@ class Filter extends React.Component {
 
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/restaurantfilter',
+            url: `${URLpath.API_URL}api/restaurantfilter`,
             headers: { 'Content-Type': 'application/json' },
             data: filterObj
         })

@@ -3,7 +3,7 @@ import '../Styles/home.css';
 import Wallpaper from './Wallpaper';
 import QuickSearch from './QuickSearch';
 import axios from 'axios';
-
+import URLpath from '../Constants';
 
 class Home extends React.Component {
     constructor() {
@@ -21,7 +21,7 @@ class Home extends React.Component {
 
         axios({
             method: 'GET',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/cityList',
+            url: `${URLpath.API_URL}api/cityList`,
             headers: { 'Content-Type': 'application/json' }
         }).then(res => this.setState({ locations: res.data.city }))
             .catch(err => console.log(err))
@@ -29,7 +29,7 @@ class Home extends React.Component {
 
         axios({
             method: 'GET',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/mealtype',
+            url: `${URLpath.API_URL}api/mealtype`,
             headers: { 'Content-Type': 'application/json' }
         }).then(response => this.setState({ mealtypes: response.data.mealtype }))
             .catch(err => console.log(err))

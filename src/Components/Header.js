@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import axios from 'axios';
 import '../Styles/header.css';
 import { withRouter } from 'react-router-dom';
+import URLpath from '../Constants';
 
 import FacebookLogin from 'react-facebook-login';
 // import GoogleLogin from 'react-google-login';
@@ -64,7 +65,7 @@ class Header extends React.Component {
         };
         axios({
             method: 'POST',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/signup',
+            url: `${URLpath.API_URL}api/signup`,
             headers: { 'Content-Type': 'application/json' },
             data: signUpObj
         })
@@ -91,7 +92,7 @@ class Header extends React.Component {
         };
         axios({
             method: 'GET',
-            url: 'https://mighty-earth-45777.herokuapp.com/api/login',
+            url: `${URLpath.API_URL}api/login`,
             headers: { 'Content-Type': 'application/json' },
             data: loginObj
         })

@@ -5,6 +5,7 @@ import Modal from 'react-modal';                          // Importing Modal for
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import '../Styles/details.css';
 import queryString from 'query-string';
+import URLpath from '../Constants';
 
 // Image Gallery Modal style object which adds pop-out effect, adds margin, background color and sets height and width of the poped out window
 const customStyles = {
@@ -39,7 +40,7 @@ class Details extends React.Component {
         const restaurantId = queryParams.restaurant;
         axios({
             method: 'GET',
-            url: `https://mighty-earth-45777.herokuapp.com/api/getResById/${restaurantId}`,
+            url: `${URLpath.API_URL}api/getResById/${restaurantId}`,
             headers: { 'Content-Type': 'application/json' }
         }).then(res => this.setState({ restaurant: res.data.restaurant }))
             .catch(err => console.log(err))
@@ -97,7 +98,7 @@ class Details extends React.Component {
 
     getData = (data) => {
 
-        return fetch(`https://mighty-earth-45777.herokuapp.com/api/payment`, {
+        return fetch(`${URLpath.API_URL}api/payment`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
